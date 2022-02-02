@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HomeTaskAndroid_03_08</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_first_fragment">Hello first main fragment</string>
+    <string name="hello_second_fragment">Hello second main fragment</string>
+    <string name="todo">TODO</string>
+    <string name="alive">Alive</string>
+    <string name="dead">Dead</string>
+    <string name="name">Name</string>
+    <string name="rick">Rick Sanchez</string>
+    <string name="morty">Morty Smith</string>
+    <string name="einstein">Albert Einstein</string>
+    <string name="name_">Jerry Smith</string>
+    <string name="cosmic">cosmic</string>
+    <string name="abadango">Abadango</string>
+    <string name="location">Location</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="details">Details</string>
+</resources>
