@@ -4,24 +4,17 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.hometaskandroid_03_08.OnClick;
 import com.example.hometaskandroid_03_08.SecondOnClick;
 import com.example.hometaskandroid_03_08.databinding.ItemSecondBinding;
 import com.example.hometaskandroid_03_08.models.SecondFrag;
 import java.util.ArrayList;
-
 public class AdAdaptor extends RecyclerView.Adapter<AdAdaptor.HoldView> {
     ArrayList<SecondFrag> list;
-    private SecondOnClick onClick;
+    private final SecondOnClick onClick;
 
     public AdAdaptor(ArrayList<SecondFrag> list, SecondOnClick onClick) {
         this.list = list;
         this.onClick = onClick;
-    }
-
-    public AdAdaptor(ArrayList<SecondFrag> list) {
-        this.list = list;
     }
 
     @NonNull

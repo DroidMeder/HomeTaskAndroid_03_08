@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="140dp"
-        android:layout_gravity="center_horizontal"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/todo" />
-
-    <TextView
-        android:id="@+id/text_status"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.97sp"
-        android:fontFamily="@font/roboto"
-        android:lineHeight="16dp"
-        android:text="@string/alive"
-        android:textColor="@color/add_text"
-        android:textFontWeight="400"
-        android:textSize="12sp"
-        tools:targetApi="p" />
+        android:background="@drawable/border"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="140dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:contentDescription="@string/todo" />
 
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="48dp"
-        android:lineSpacingExtra="5sp"
-        android:translationY="-2.62sp"
-        android:fontFamily="@font/roboto"
-        android:textFontWeight="400"
-        android:textSize="16sp"
-        android:textColor="@color/almost_black"
-        android:lineHeight="24dp"
-        android:text="@string/name"
-        tools:targetApi="p" />
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:lineSpacingExtra="2sp"
+            android:translationY="-0.97sp"
+            android:fontFamily="@font/roboto"
+            android:lineHeight="16dp"
+            android:text="@string/alive"
+            android:textColor="@color/add_text"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:lineSpacingExtra="5sp"
+            android:layout_marginStart="12dp"
+            android:translationY="-2.62sp"
+            android:fontFamily="@font/roboto"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            android:textColor="@color/almost_black"
+            android:lineHeight="24dp"
+            android:text="@string/name"
+            tools:targetApi="p" />
+
+    </LinearLayout>
+
 </LinearLayout>

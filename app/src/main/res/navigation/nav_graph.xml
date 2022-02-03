@@ -8,16 +8,32 @@
     <fragment
         android:id="@+id/first_fragment"
         android:name="com.example.hometaskandroid_03_08.ui.FirstMainFragment"
-        android:label="fragment_firsr_main"
-        tools:layout="@layout/fragment_firsr_main" />
+        android:label="fragment_first_main"
+        tools:layout="@layout/fragment_first_main">
+        <action
+            android:id="@+id/action_first_fragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/second_fragment"
         android:name="com.example.hometaskandroid_03_08.ui.SecondMainFragment"
         android:label="fragment_second_main"
-        tools:layout="@layout/fragment_second_main" />
+        tools:layout="@layout/fragment_second_main" >
+        <action
+            android:id="@+id/action_second_fragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
     <fragment
         android:id="@+id/finalFragment"
         android:name="com.example.hometaskandroid_03_08.ui.FinalFragment"
         android:label="fragment_final"
-        tools:layout="@layout/fragment_final" />
+        tools:layout="@layout/fragment_final">
+        <argument android:name="imagePath"
+            app:argType="string"/>
+        <argument android:name="status"
+            app:argType="string"/>
+        <argument android:name="name"
+            app:argType="string"/>
+    </fragment>
 </navigation>

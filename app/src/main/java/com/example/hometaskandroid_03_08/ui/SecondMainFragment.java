@@ -3,22 +3,19 @@ package com.example.hometaskandroid_03_08.ui;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.hometaskandroid_03_08.R;
 import com.example.hometaskandroid_03_08.SecondOnClick;
 import com.example.hometaskandroid_03_08.adaptors.AdAdaptor;
 import com.example.hometaskandroid_03_08.databinding.FragmentSecondMainBinding;
+import com.example.hometaskandroid_03_08.models.BaseFragment;
 import com.example.hometaskandroid_03_08.models.SecondFrag;
-
 import java.util.ArrayList;
 
-public class SecondMainFragment extends Fragment implements SecondOnClick {
+public class SecondMainFragment extends BaseFragment implements SecondOnClick {
     private FragmentSecondMainBinding binding;
     private final ArrayList<SecondFrag> list=new ArrayList<>();
 
@@ -34,9 +31,9 @@ public class SecondMainFragment extends Fragment implements SecondOnClick {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         load();
-        binding.recViewOf1Frag.setLayoutManager(new GridLayoutManager(requireContext(), 2));
+        binding.recViewOf2Frag.setLayoutManager(new GridLayoutManager(requireContext(), 2));
         AdAdaptor adAdaptor = new AdAdaptor(list, this);
-        binding.recViewOf1Frag.setAdapter(adAdaptor);
+        binding.recViewOf2Frag.setAdapter(adAdaptor);
     }
 
     private void load() {
@@ -62,11 +59,8 @@ public class SecondMainFragment extends Fragment implements SecondOnClick {
 
     @Override
     public void secondOnClick(SecondFrag secondFrag) {
-        Bundle bundle = new Bundle();
-        bundle.putInt("key_one", R.drawable.image_1);
-        bundle.putString("key_two", secondFrag.getTextOne());
-        bundle.putString("key_three", secondFrag.getTextTwo());
-        NavHostFragment.findNavController(SecondMainFragment.this).navigate(R.id.finalFragment, bundle);
-
+        navigate(SecondMainFragmentDirections.actionSecondFragmentToFinalFragment(
+                String.valueOf(R.drawable.image_1),
+                secondFrag.getTextOne(), secondFrag.getTextTwo()));
     }
 }

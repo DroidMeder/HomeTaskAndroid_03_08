@@ -1,34 +1,26 @@
 package com.example.hometaskandroid_03_08.ui;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.hometaskandroid_03_08.OnClick;
 import com.example.hometaskandroid_03_08.R;
 import com.example.hometaskandroid_03_08.adaptors.FirstAdaptor;
-import com.example.hometaskandroid_03_08.databinding.FragmentFirsrMainBinding;
+import com.example.hometaskandroid_03_08.databinding.FragmentFirstMainBinding;
+import com.example.hometaskandroid_03_08.models.BaseFragment;
 import com.example.hometaskandroid_03_08.models.FirstFrag;
-
-import java.util.AbstractList;
 import java.util.ArrayList;
 
-public class FirstMainFragment extends Fragment implements OnClick {
-    private FragmentFirsrMainBinding binding;
+public class FirstMainFragment extends BaseFragment implements OnClick {
+    private FragmentFirstMainBinding binding;
     private final ArrayList<FirstFrag> list=new ArrayList<>();
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding= FragmentFirsrMainBinding.inflate(LayoutInflater
+        binding= FragmentFirstMainBinding.inflate(LayoutInflater
                 .from(requireContext()), container, false);
         return binding.getRoot();
     }
@@ -50,11 +42,8 @@ public class FirstMainFragment extends Fragment implements OnClick {
 
     @Override
     public void onClick(FirstFrag firstFrag) {
-        Bundle bundle = new Bundle();
-        bundle.putInt("key_one", firstFrag.getPath());
-        bundle.putString("key_two", firstFrag.getStatus());
-        bundle.putString("key_three", firstFrag.getName());
-        NavHostFragment.findNavController(FirstMainFragment.this).navigate(R.id.finalFragment, bundle);
-
+        navigate(FirstMainFragmentDirections.actionFirstFragmentToFinalFragment(
+                String.valueOf(firstFrag.getPath()),
+                firstFrag.getStatus(), firstFrag.getName()));
     }
 }

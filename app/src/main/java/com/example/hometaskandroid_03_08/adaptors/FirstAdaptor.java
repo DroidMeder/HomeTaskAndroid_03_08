@@ -12,15 +12,11 @@ import java.util.ArrayList;
 
 public class FirstAdaptor extends RecyclerView.Adapter<FirstAdaptor.HoldView> {
     private final ArrayList<FirstFrag> list;
-    private OnClick onClick;
+    private final OnClick onClick;
 
     public FirstAdaptor(ArrayList<FirstFrag> list, OnClick onClick) {
         this.list = list;
         this.onClick = onClick;
-    }
-
-    public FirstAdaptor(ArrayList<FirstFrag> list) {
-        this.list = list;
     }
 
     @NonNull
